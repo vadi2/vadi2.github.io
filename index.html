@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vadim Peretokin - Healthcare Informatics Expert</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --light-bg: #f5f6fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .experience-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .company {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--light-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .projects {
+            margin-top: 1rem;
+        }
+
+        .projects a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .projects a:hover {
+            text-decoration: underline;
+        }
+
+        .certifications {
+            list-style: none;
+        }
+
+        .certification-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        .certification-title {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .certification-date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+        }
+
+        #theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #theme-toggle:hover {
+            background: var(--secondary-color);
+        }
+
+        .dark-mode {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .dark-mode section {
+            background: #2d2d2d;
+            color: #fff;
+        }
+
+        .dark-mode .skill-tag, 
+        .dark-mode .certification-item {
+            background: #3d3d3d;
+            color: #fff;
+        }
+
+        .dark-mode .projects a {
+            color: #6ab0f3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vadim Peretokin</h1>
+        <div class="contact-info">
+            <p><a href="https://linkedin.com/in/vadimperetokin" style="color: white;">linkedin.com/in/vadimperetokin</a></p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="summary">
+            <h2>Summary</h2>
+            <p class="summary">FHIR expert and healthcare informatics consultant with 10+ years of professional experience. Specialized in integrating HL7 FHIR with existing systems and pioneering advanced technologies. Experienced in guiding startups, corporations, and governments across Scandinavia, Benelux, and the US through implementation processes. Currently serving as a board member of HL7 Sweden since May 2024.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Key Experience</h2>
+            <div class="experience-item">
+                <p class="job-title">Board Member</p>
+                <p class="company">HL7 Sweden</p>
+                <p class="date">May 2024 - Present</p>
+                <p>Contributing to the strategic direction and development of HL7 standards in Sweden.</p>
+            </div>
+
+            <div class="experience-item">
+                <p class="job-title">Product Architect</p>
+                <p class="company">Carasent ASA</p>
+                <p class="date">Apr 2023 - Present</p>
+                <p>Leading development of a FHIR-native practice management system and upskilling team knowledge of FHIR.</p>
+            </div>
+
+            <div class="experience-item">
+                <p class="job-title">Software Architect | FHIR SME</p>
+                <p class="company">Philips</p>
+                <p class="date">May 2021 - Mar 2023</p>
+                <p>Led SMART BEAR EU project and ICHOM's FHIR efforts, including clinical concept mapping and implementation guide development.</p>
+            </div>
+
+            <div class="experience-item">
+                <p class="job-title">FHIR Consultant</p>
+                <p class="company">Firely</p>
+                <p class="date">Jan 2017 - Apr 2021</p>
+                <p>Consulted for various healthcare organizations across Europe and US on FHIR implementation and system integration.</p>
+            </div>
+
+            <div class="experience-item">
+                <p class="job-title">Clinical Information Modeller</p>
+                <p class="company">Australian Digital Health Agency</p>
+                <p class="date">Jul 2013 - Dec 2016</p>
+                <p>Worked on NEHTA's logical models (OpenEHR) and HL7 CDA, analyzing clinical information requirements. Early adopter of FHIR, co-created and contributed to fhir-drills.github.io.</p>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Licenses & Certifications</h2>
+            <ul class="certifications">
+                <li class="certification-item">
+                    <p class="certification-title">Certified Health Informatician Australasia</p>
+                    <p>Endorsed by Australian College of Health Informatics (ACHI), Health Information Managers Association Australia (HIMAA), and Health Informatics Society of Australia (HISA)</p>
+                    <p class="certification-date">Jun 2016 - Jun 2019</p>
+                </li>
+                <li class="certification-item">
+                    <p class="certification-title">SNOMED CT Foundation Course</p>
+                    <p>IHTSDO</p>
+                </li>
+                <li class="certification-item">
+                    <p class="certification-title">HL7 Fundamentals Course</p>
+                    <p>HL7 Argentina</p>
+                </li>
+                <li class="certification-item">
+                    <p class="certification-title">Certified Scrum Master</p>
+                    <p>Scrum Alliance</p>
+                    <p class="certification-date">Jul 2014 - Jul 2016</p>
+                </li>
+                <li class="certification-item">
+                    <p class="certification-title">SNOMED CT Implementation Course</p>
+                </li>
+                <li class="certification-item">
+                    <p class="certification-title">HL7 FHIR Proficiency Exam</p>
+                    <p>HL7 HEALTHCARE STANDARD INSTITUTE</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>FHIR Projects</h2>
+            <div class="projects">
+                <p>Creator of educational FHIR resources:</p>
+                <ul style="list-style: none; margin-top: 0.5rem;">
+                    <li><a href="https://fhir-drills.github.io" target="_blank">FHIR Drills</a> - Co-created interactive FHIR learning platform</li>
+                    <li><a href="https://fhir-formats.github.io" target="_blank">FHIR Formats</a> - FHIR format comparison and exploration tool</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Core Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">HL7 FHIR</span>
+                <span class="skill-tag">Software Architecture</span>
+                <span class="skill-tag">Healthcare Consulting</span>
+                <span class="skill-tag">Data Modeling</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SNOMED-CT</span>
+                <span class="skill-tag">HL7 CDA</span>
+                <span class="skill-tag">OpenEHR</span>
+            </div>
+        </section>
+    </div>
+
+    <button id="theme-toggle">Toggle Dark Mode</button>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+        });
+
+        // Check for saved theme preference
+        const savedDarkMode = localStorage.getItem('darkMode');
+        if (savedDarkMode === 'true') {
+            body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>
