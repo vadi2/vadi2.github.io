@@ -28,7 +28,26 @@
             background: var(--primary-color);
             color: white;
             padding: 2rem;
-            text-align: center;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .hero-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-text {
+            text-align: left;
         }
 
         .contact-info {
@@ -139,6 +158,14 @@
         }
 
         @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
             .container {
                 padding: 1rem;
             }
@@ -179,7 +206,7 @@
             color: #fff;
         }
 
-        .dark-mode .skill-tag, 
+        .dark-mode .skill-tag,
         .dark-mode .certification-item {
             background: #3d3d3d;
             color: #fff;
@@ -211,10 +238,17 @@
 </head>
 <body>
     <header>
-        <h1>Vadim Peretokin</h1>
-        <p style="font-size: 1.2rem; margin-top: 0.5rem;">Freelance FHIR / AI Expert & Trainer | Software Architect | HL7 Sweden board member</p>
-        <div class="contact-info">
-            <p><a href="https://linkedin.com/in/vadimperetokin" style="color: white;">linkedin.com/in/vadimperetokin</a></p>
+        <div class="hero">
+            <div class="hero-photo">
+                <img src="profile.jpg" alt="Vadim Peretokin">
+            </div>
+            <div class="hero-text">
+                <h1>Vadim Peretokin</h1>
+                <p style="font-size: 1.2rem; margin-top: 0.5rem;">Freelance FHIR / AI Expert & Trainer | Software Architect | HL7 Sweden board member</p>
+                <div class="contact-info">
+                    <p><a href="https://linkedin.com/in/vadimperetokin" style="color: white;">linkedin.com/in/vadimperetokin</a></p>
+                </div>
+            </div>
         </div>
     </header>
 
