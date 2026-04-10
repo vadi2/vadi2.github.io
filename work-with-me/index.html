@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work With Me - Vadim Peretokin</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f5f6fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Version 2: Bold hero with grid layout */
+
+        .version-label {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        nav {
+            background: #1a252f;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        nav .nav-name {
+            font-weight: bold;
+            color: white;
+            font-size: 1.05rem;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a252f 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-banner img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--secondary-color);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-banner h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-banner .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .pain-points {
+            background: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .pain-points h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pain-item {
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            text-align: left;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .pain-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .pain-item .question {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pain-item .answer {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .pain-item .learn-more {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .services-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .services-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .services-section > p {
+            color: #555;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .service {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 1.5rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .service:last-of-type {
+            border-bottom: none;
+        }
+
+        .service-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .service-meta {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 0.25rem;
+        }
+
+        .service-desc p {
+            margin-bottom: 0.75rem;
+        }
+
+        .service-desc .ideal {
+            font-style: italic;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .service-addon {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 1.5rem;
+            padding: 1.5rem 0 2rem 0;
+            border-bottom: 1px solid #eee;
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        .service-addon::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+
+        .service-addon .addon-label {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .trust-bar {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .trust-bar p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .cta-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section .sub {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.15rem;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-color);
+        }
+
+        .testimonials {
+            background: white;
+            padding: 3rem 2rem;
+        }
+
+        .testimonials h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .testimonial blockquote {
+            font-style: italic;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial .attribution {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .contact-form-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .contact-form-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-section .sub {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: var(--primary-color);
+        }
+
+        .contact-form .alt-contact {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .contact-form .alt-contact a {
+            color: var(--secondary-color);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (max-width: 768px) {
+            .hero-banner h1 { font-size: 2rem; }
+            .service { grid-template-columns: 1fr; gap: 0.5rem; }
+            .service-addon { grid-template-columns: 1fr; gap: 0.5rem; margin-left: 1rem; }
+            .pain-grid { grid-template-columns: 1fr !important; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            nav { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-name">Vadim Peretokin</a>
+        <div class="nav-links">
+            <a href="/">About</a>
+            <a href="/work-with-me">Services</a>
+            <a href="https://linkedin.com/in/vadimperetokin" target="_blank">LinkedIn</a>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <img src="profile.jpg" alt="Vadim Peretokin">
+        <h1>I help you get FHIR right.</h1>
+        <p class="subtitle">12 years in healthcare informatics. 10 years specializing in HL7 FHIR. I've guided startups, corporations, and governments across Norway, Sweden, Denmark, Finland, the Netherlands, Belgium, Israel, the US, and Australia - from first profile to production.</p>
+    </div>
+
+    <div class="pain-points">
+        <h2>Sound familiar?</h2>
+        <div class="pain-grid">
+            <a class="pain-item" href="#training">
+                <p class="question">Team new to FHIR?</p>
+                <p class="answer">Hands-on training that gets your team proficient with FHIR - from fundamentals to advanced profiling.</p>
+                <span class="learn-more">Learn more &#8595;</span>
+            </a>
+            <a class="pain-item" href="#training-ai">
+                <p class="question">Want AI to accelerate your FHIR work?</p>
+                <p class="answer">Learn to use AI as a force multiplier for FHIR - safely, with quality, and without cutting corners.</p>
+                <span class="learn-more">Learn more &#8595;</span>
+            </a>
+            <a class="pain-item" href="#implementation">
+                <p class="question">Implementation stuck?</p>
+                <p class="answer">I embed with your team to unblock architecture decisions, fix conformance issues, and get you to go-live.</p>
+                <span class="learn-more">Learn more &#8595;</span>
+            </a>
+            <a class="pain-item" href="#audit">
+                <p class="question">Need a pre-launch review?</p>
+                <p class="answer">I audit your FHIR implementation for conformance gaps and interoperability risks before they become production problems.</p>
+                <span class="learn-more">Learn more &#8595;</span>
+            </a>
+            <a class="pain-item" href="#advisory">
+                <p class="question">Need ongoing guidance?</p>
+                <p class="answer">Ongoing access to a seasoned FHIR expert for the hard questions that come up between milestones.</p>
+                <span class="learn-more">Learn more &#8595;</span>
+            </a>
+            <a class="pain-item" href="#board">
+                <p class="question">Need governance expertise?</p>
+                <p class="answer">I serve on boards and advisory councils, bringing international standards experience and a cross-market network.</p>
+                <span class="learn-more">Learn more &#8595;</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="services-section">
+        <h2>How we can work together</h2>
+        <p>Each engagement is scoped to what you actually need. Here's what I typically do:</p>
+
+        <div class="service" id="training" style="border-bottom: none; padding-bottom: 0.5rem;">
+            <div>
+                <p class="service-name">FHIR Training</p>
+                <p class="service-meta">Workshops &middot; 2-5 days &middot; Fixed price</p>
+            </div>
+            <div class="service-desc">
+                <p>Hands-on training covering FHIR fundamentals through advanced profiling and implementation guide development. I tailor the content to your team's level - whether they're starting from scratch or need to deepen existing skills in areas like resource modelling, terminology binding, or search.</p>
+                <p class="ideal">For teams adopting FHIR who need structured, practical training to get productive fast.</p>
+            </div>
+        </div>
+
+        <div class="service-addon" id="training-ai">
+            <div>
+                <p class="addon-label">Add-on</p>
+                <p class="service-name">+ AI for FHIR</p>
+                <p class="service-meta">Additional 1-2 days &middot; Fixed price</p>
+            </div>
+            <div class="service-desc">
+                <p>Extend your FHIR training with AI-accelerated workflows. Your team learns to leverage AI for profiling, validation, concept mapping, and implementation - in a way that maintains quality, standards compliance, and safety. Not "here's ChatGPT, good luck" but structured methods for using AI as a real force multiplier.</p>
+                <p class="ideal">For teams who want to combine FHIR proficiency with modern AI tools - safely and with quality.</p>
+            </div>
+        </div>
+
+        <div class="service" id="implementation">
+            <div>
+                <p class="service-name">Implementation Consulting</p>
+                <p class="service-meta">Embedded &middot; Flexible scope &middot; Weekly rate</p>
+            </div>
+            <div class="service-desc">
+                <p>Architecture design, implementation guide development, clinical concept mapping (SNOMED CT, LOINC, ICD-10, ICD-11, and more), and conformance testing. I've done this for EHR vendors, national agencies, and EU research projects across the Nordics, Netherlands, Belgium, Israel, US, and Australia.</p>
+                <p class="ideal">For organizations building FHIR-based systems who need an architect who's seen what works across multiple countries.</p>
+            </div>
+        </div>
+
+        <div class="service" id="audit">
+            <div>
+                <p class="service-name">Conformance Audit</p>
+                <p class="service-meta">Fixed scope &middot; 1-2 weeks &middot; Fixed price</p>
+            </div>
+            <div class="service-desc">
+                <p>An independent review of your FHIR implementation for conformance, interoperability, and architectural risks. You get a prioritized report - what needs fixing, why, and how.</p>
+                <p class="ideal">For teams approaching go-live, certification, or a partner integration who want confidence their implementation holds up.</p>
+            </div>
+        </div>
+
+        <div class="service" id="advisory">
+            <div>
+                <p class="service-name">Technical Advisory</p>
+                <p class="service-meta">Retainer &middot; A few hours per week</p>
+            </div>
+            <div class="service-desc">
+                <p>Ongoing access to a seasoned FHIR expert for architecture decisions, standards strategy, terminology questions, and the hard problems that come up between milestones.</p>
+                <p class="ideal">For teams who don't need full-time help but need fast, correct answers to hard questions.</p>
+            </div>
+        </div>
+
+        <div class="service" id="board">
+            <div>
+                <p class="service-name">Board Membership</p>
+                <p class="service-meta">Ongoing &middot; Governance</p>
+            </div>
+            <div class="service-desc">
+                <p>Domain expertise and an international network at the governance level. As a current HL7 Sweden board member, I understand standards governance from the inside. I help health tech companies and standards bodies navigate regulatory landscapes, standards adoption, and market strategy.</p>
+                <p class="ideal">For health tech companies and standards organizations looking for independent expertise and cross-market perspective at the board level.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="trust-bar">
+        <p>Previously with or consulting for:</p>
+        <div class="trust-logos">
+            <span>E-h&auml;lsomyndigheten</span>
+            <span>Inera</span>
+            <span>Philips</span>
+            <span>Firely</span>
+            <span>Carasent</span>
+            <span>Australian Digital Health Agency</span>
+        </div>
+        <p style="margin-top: 1.5rem;">Volunteering for:</p>
+        <div class="trust-logos">
+            <span>HL7 Sweden (board member)</span>
+            <span>HL7 FHIR standard</span>
+        </div>
+    </div>
+
+    <div class="testimonials">
+        <h2>What people say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <blockquote>"Vadim is collaborative by nature with a keen ability to balance the needs of both business and users to design and deploy eloquent solutions. His passion and drive in accumulating knowledge clearly inspires others and earns Vadim a natural leadership role."</blockquote>
+                <p class="attribution">- John Leitch</p>
+            </div>
+            <div class="testimonial">
+                <blockquote>"His breadth and depth of knowledge in clinical informatics and software helped the team solve a range of complex problems. His courage in pushing boundaries and generosity in sharing ideas was a success factor of our team's innovation."</blockquote>
+                <p class="attribution">- David Cai</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-form-section">
+        <h2>Tell me what you're working on</h2>
+        <p class="sub">I'll get back to you within a day.</p>
+        <form class="contact-form" action="https://formspree.io/f/mjgpqovr" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">What are you working on?</label>
+            <textarea id="message" name="message" placeholder="Tell me a bit about your project, team, and what you need help with..." required></textarea>
+            <button type="submit">Send</button>
+            <p class="alt-contact">Or email me directly at <a href="mailto:fhir@vadimperetok.in?subject=Inquiry%20from%20vadimperetok.in">fhir@vadimperetok.in</a></p>
+        </form>
+    </div>
+
+    <footer>
+        <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Peretokin Consulting</p>
+        <p style="font-size: 0.9rem;">Gothenburg, Sweden</p>
+    </footer>
+</body>
+</html>
