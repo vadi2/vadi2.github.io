@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work With Me - Vadim Peretokin</title>
+    <meta name="description" content="Independent FHIR expert offering training, implementation consulting, conformance audits, and technical advisory. Based in Europe, available worldwide.">
+    <meta property="og:title" content="Work With Me - Vadim Peretokin">
+    <meta property="og:description" content="I help you get FHIR right. Training, implementation consulting, conformance audits, and technical advisory from an independent expert with 12 years in healthcare informatics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vadimperetok.in/work-with-me/">
+    <meta property="og:image" content="https://vadimperetok.in/profile.jpg">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
     <style>
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
-            --accent-color: #e74c3c;
             --text-color: #333;
             --light-bg: #f5f6fa;
         }
@@ -27,15 +32,6 @@
         }
 
         /* Version 2: Bold hero with grid layout */
-
-        .version-label {
-            background: var(--accent-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            text-align: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
 
         nav {
             background: #1a252f;
@@ -263,39 +259,6 @@
             opacity: 0.8;
         }
 
-        .cta-section {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: var(--light-bg);
-        }
-
-        .cta-section h2 {
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .cta-section .sub {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 1.15rem;
-            transition: background 0.3s;
-        }
-
-        .cta-button:hover {
-            background: var(--primary-color);
-        }
-
         .testimonials {
             background: white;
             padding: 3rem 2rem;
@@ -427,6 +390,68 @@
         html {
             scroll-behavior: smooth;
         }
+
+        #theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #theme-toggle:hover {
+            background: var(--secondary-color);
+        }
+
+        .dark-mode {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .dark-mode .pain-points,
+        .dark-mode .testimonials {
+            background: #2d2d2d;
+            color: #fff;
+        }
+
+        .dark-mode .pain-item {
+            background: #3d3d3d;
+            color: #fff;
+        }
+
+        .dark-mode .pain-item .question { color: #6ab0f3; }
+        .dark-mode .pain-item .answer { color: #ccc; }
+
+        .dark-mode .services-section { color: #fff; }
+        .dark-mode .services-section > p { color: #ccc; }
+        .dark-mode .service-desc p { color: #ddd; }
+        .dark-mode .service-desc .ideal { color: #aaa; }
+        .dark-mode .service-meta { color: #999; }
+
+        .dark-mode .testimonial {
+            background: #3d3d3d;
+        }
+        .dark-mode .testimonial blockquote { color: #ccc; }
+        .dark-mode .testimonial .attribution { color: #6ab0f3; }
+
+        .dark-mode .contact-form-section {
+            background: #2d2d2d;
+            color: #fff;
+        }
+        .dark-mode .contact-form-section .sub { color: #ccc; }
+        .dark-mode .contact-form input,
+        .dark-mode .contact-form textarea {
+            background: #3d3d3d;
+            border-color: #555;
+            color: #fff;
+        }
+        .dark-mode .contact-form label { color: #6ab0f3; }
+        .dark-mode .contact-form .alt-contact { color: #aaa; }
 
         @media (max-width: 768px) {
             .hero-banner h1 { font-size: 2rem; }
@@ -585,11 +610,11 @@
         <div class="testimonial-grid">
             <div class="testimonial">
                 <blockquote>"Vadim is collaborative by nature with a keen ability to balance the needs of both business and users to design and deploy eloquent solutions. His passion and drive in accumulating knowledge clearly inspires others and earns Vadim a natural leadership role."</blockquote>
-                <p class="attribution">- John Leitch</p>
+                <p class="attribution">- John Leitch, Director / General Manager, Enterprise Portfolio & Architecture</p>
             </div>
             <div class="testimonial">
                 <blockquote>"His breadth and depth of knowledge in clinical informatics and software helped the team solve a range of complex problems. His courage in pushing boundaries and generosity in sharing ideas was a success factor of our team's innovation."</blockquote>
-                <p class="attribution">- David Cai</p>
+                <p class="attribution">- David Cai, Clinical Information Modeller, Australian Digital Health Agency</p>
             </div>
         </div>
     </div>
@@ -613,5 +638,23 @@
         <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Peretokin Consulting</p>
         <p style="font-size: 0.9rem;">Gothenburg, Sweden</p>
     </footer>
+
+    <button id="theme-toggle">Toggle Dark Mode</button>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+        });
+
+        const savedDarkMode = localStorage.getItem('darkMode');
+        if (savedDarkMode === 'true') {
+            body.classList.add('dark-mode');
+        }
+    </script>
 </body>
 </html>
